@@ -1,0 +1,703 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: #fff;
+  background-color: #272728;
+  overflow-x: hidden;
+}
+body {
+  background-image: url('assets/bmww.png');
+  background-size: cover;       /* L’image couvre toute la page */
+  background-position: center;  /* Centrer l’image */
+  background-repeat: no-repeat; /* Évite la répétition */
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(15, 15, 16, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #6c63ff;
+}
+
+/* --- Burger menu --- */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px;
+  border-radius: 5px;
+}
+
+/* --- Section Hero --- */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 700px;
+  padding: 2rem;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  border: none;
+  background: linear-gradient(45deg, #6c63ff, #836fff);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #7b72ff, #998aff);
+}
+
+/* --- Footer --- */
+footer {
+  background: #111;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    background: rgba(15, 15, 16, 0.95);
+    flex-direction: column;
+    width: 200px;
+    text-align: right;
+    padding: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+/* --- Page Moi & Hobbys --- */
+.content {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+.about-me {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 1rem 2rem;
+}
+
+.about-me h2 {
+  font-size: 2rem;
+  color: #6c63ff;
+  margin-bottom: 1rem;
+}
+
+.about-me p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.hobbys {
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 1200px;
+}
+
+.hobbys h2 {
+  font-size: 2rem;
+  color: #6c63ff;
+  margin-bottom: 2rem;
+}
+
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.hobby-card {
+  background: #1a1a1c;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.hobby-card:hover {
+  transform: translateY(-5px);
+}
+
+.hobby-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.hobby-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, black, #836fff);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  color: black;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.hobby-btn:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.hobby-text {
+  display: none;
+  padding: 1rem;
+  text-align: left;
+  color: white;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.hobby-card.active {
+  grid-column: span 2;
+  transform: scale(1.03);
+}
+
+.hobby-card.active .hobby-text {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Page Intelligences Multiples --- */
+.intro-intelligences {
+  text-align: center;
+  margin: 3rem auto 2rem;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.intro-intelligences h2 {
+  color: #6c63ff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-intelligences p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.intelligence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.intelligence-card {
+  background: #1a1a1c;
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.intelligence-card:hover {
+  transform: translateY(-5px);
+}
+
+.intelligence-card h3 {
+  color: #836fff;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.intelligence-card p {
+  color: #bbb;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #2b2b2d;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  width: var(--progress);
+  background: linear-gradient(45deg, #6c63ff, #998aff);
+  border-radius: 5px;
+  animation: progressAnim 1s ease-out;
+}
+
+@keyframes progressAnim {
+  from { width: 0; }
+  to { width: var(--progress); }
+}
+
+/* --- Page Défauts & Qualités --- */
+.intro-defauts {
+  text-align: center;
+  margin: 3rem auto 2rem;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.intro-defauts h2 {
+  color: #6c63ff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-defauts p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.defauts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.defaut-card {
+  background: transparent;
+  height: 250px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.defaut-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  padding: 1.5rem;
+  background: #1a1a1c;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.card-front h3, .card-back h3 {
+  color: #836fff;
+  margin-bottom: 0.5rem;
+}
+
+.card-front p, .card-back p {
+  color: #bbb;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #6c63ff, #998aff);
+  color: #fff;
+}
+
+.card-back p {
+  color: #f5f5f5;
+}
+
+/* --- Page Réussite --- */
+.reussite-intro {
+  text-align: center;
+  margin: 3rem auto 2rem;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.reussite-intro h2 {
+  color: #6c63ff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.reussite-intro p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.reussite-hero {
+  position: relative;
+  max-width: 1100px;
+  margin: 3rem auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+}
+
+.reussite-hero img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(70%);
+  transition: transform 0.5s ease;
+}
+
+.reussite-hero:hover img {
+  transform: scale(1.05);
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: #fff;
+  max-width: 600px;
+}
+
+.overlay-text h3 {
+  font-size: 1.8rem;
+  color: #836fff;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-text p {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* --- Timeline --- */
+.timeline {
+  margin: 4rem auto;
+  max-width: 900px;
+  position: relative;
+}
+
+.timeline h2 {
+  text-align: center;
+  color: #6c63ff;
+  margin-bottom: 3rem;
+}
+
+.timeline-container {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.timeline-container::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: #6c63ff;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-content {
+  background: #1a1a1c;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  position: relative;
+  animation: fadeInUp 1s ease both;
+}
+
+.timeline-content h3 {
+  color: #836fff;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  color: #bbb;
+  line-height: 1.5;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive Timeline --- */
+@media (max-width: 800px) {
+  .timeline-container::after {
+    left: 8px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 2.5rem;
+    text-align: left;
+  }
+
+  .timeline-item.right {
+    left: 0;
+  }
+}
+
+.timeline-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Page Portrait Chinois --- */
+.intro-portrait {
+  text-align: center;
+  margin: 3rem auto 2rem;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.intro-portrait h2 {
+  color: #6c63ff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-portrait p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.portrait-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.portrait-card {
+  background: transparent;
+  height: 180px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.portrait-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+}
+
+.card-front {
+  background: #1a1a1c;
+  color: #836fff;
+  font-weight: bold;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #6c63ff, #998aff);
+  color: #fff;
+  transform: rotateY(180deg);
+  font-weight: normal;
+}
+
+/* --- Animations Accueil --- */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeSlideIn 1.2s ease-out forwards;
+}
+
+.hero-content h2 {
+  animation: fadeSlideIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-content p {
+  animation: fadeSlideIn 1.2s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.btn {
+  animation: fadeSlideIn 1.4s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* Apparition globale de la page */
+body {
+  opacity: 0;
+  animation: fadeInBody 1s ease forwards;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
